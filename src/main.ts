@@ -2,7 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 const mongoose = require("mongoose")
-const url = 'mongodb+srv://thien:ogZA3gRzecAytn2g@mindmasterminds.jb6xzfh.mongodb.net/MindMasterMinds'
+const url = process.env.MONGO_URL
+
+
 const connect = mongoose.connect(url)
 connect.then(db => {
   console.log("data connected")
