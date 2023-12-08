@@ -39,12 +39,12 @@ export class AccountService {
       secret: process.env.JWT_SECRET,
       algorithm: 'HS512',
       issuer: 'http://localhost:3000',
-      expiresIn: '60s',
+      expiresIn: process.env.ACCESS_TOKEN_LIFE_TIME,
     });
     const refreshToken = await this.jwtService.signAsync(refreshTokenPayload, {
       secret: process.env.JWT_SECRET,
       algorithm: 'HS512',
-      expiresIn: '1y',
+      expiresIn: process.env.REFRESH_TOKEN_LIFE_TIME,
     });
     return new TokenResponse(accessToken, refreshToken);
   }

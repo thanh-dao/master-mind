@@ -17,6 +17,12 @@ export class Post {
   @Prop({ required: true })
   title: string;
 
+  @Prop({ required: true, default: 0 })
+  totalReactions: number;
+
+  @Prop({ required: true, default: [] })
+  topReactions: Array<string>;
+
   @Prop({ required: true, enum: ['QUESTION', 'TUTORIAL'] })
   postType: string;
 

@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AccountModule } from './account/account.module';
 import { PostModule } from './post/post.module';
 import { MajorModule } from './major/major.module';
+import { PostReactionModule } from './post-reaction/post-reaction.module';
 @Module({
   controllers: [AppController],
   providers: [AppService],
@@ -15,6 +16,7 @@ import { MajorModule } from './major/major.module';
     AccountModule,
     PostModule,
     MajorModule,
+    PostReactionModule,
   ],
 })
 export class AppModule {}
